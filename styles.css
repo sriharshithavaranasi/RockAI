@@ -1,0 +1,123 @@
+/* Import Rockstar Font */
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+/* Rockstar Theme */
+body {
+    background-color: #111;
+    color: white;
+    font-family: 'Metal Mania', cursive; /* Updated Font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 🎤 Rockstar Search Bar */
+#searchBar {
+    width: 60%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ff0066;
+    border-radius: 25px;
+    background: #222;
+    font-family: 'Metal Mania', cursive;
+    color: white;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* 🔥 Glow Effect When Typing */
+#searchBar:focus {
+    border-color: #ff3385;
+    box-shadow: 0px 0px 10px #ff0066;
+}
+
+/* === CENTERED ARTIST TILE WITH ARROWS ON SIDES === */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between arrows and tile */
+}
+
+/* Artist Tile */
+.artist-tile {
+    width: 400px;
+    height: 500px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ff0066;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+/* Artist Image */
+.artist-tile img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 0, 102, 0.5);
+}
+
+/* Artist Text - Rockstar Font */
+.artist-tile h2 {
+    font-size: 26px;
+    margin: 5px 0;
+    font-family: 'Metal Mania', cursive;
+}
+
+.artist-tile p {
+    font-size: 20px;
+    margin: 5px 0;
+    font-family: 'Metal Mania', cursive;
+}
+
+/* Remix Button */
+.remix-btn {
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: #ff0066;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Metal Mania', cursive; /* Rockstar Font */
+}
+
+.remix-btn:hover {
+    background-color: #ff3385;
+    box-shadow: 0px 0px 10px #ff0066;
+}
+
+/* Navigation Buttons - Left & Right of the Tile */
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #ff0066;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: #ff3385;
+}
+
+/* Positioning arrows correctly */
+.left {
+    margin-right: 10px;
+}
+
+.right {
+    margin-left: 10px;
+}

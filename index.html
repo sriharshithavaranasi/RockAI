@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockstar Music Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="text" id="searchBar" placeholder="Search for an artist..." onkeyup="searchArtist()">
+<div class="container">
+    <div class="carousel">
+        <button class="nav-btn left" onclick="prevArtist()">&#10094;</button>
+        <div class="artist-tile" id="artistTile"></div>
+        <button class="nav-btn right" onclick="nextArtist()">&#10095;</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
