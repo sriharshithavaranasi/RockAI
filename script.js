@@ -32,7 +32,7 @@ async function getSpotifyToken() {
 }
 
 
-// 🎧 Fetch Artists (Fixes Previews for Left/Right Navigation)
+// 🎧 Fetch Artists for the Carousel (Fixes 'No Songs Available' Issue)
 async function fetchArtists() {
     try {
         const response = await fetch(ARTISTS_URL, {
@@ -50,9 +50,9 @@ async function fetchArtists() {
 
                 return {
                     name: artist.name,
-                    song: topTrack ? topTrack.song : "No Songs Available",
+                    song: topTrack.song, // ✅ Ensure the song name is stored
                     image: album.images.length > 1 ? album.images[1].url : 'https://via.placeholder.com/250',
-                    preview: topTrack ? topTrack.preview : null
+                    preview: topTrack.preview
                 };
             })
         );
@@ -105,7 +105,6 @@ function remixSong(songName) {
     alert(`🎸 Remixing "${songName}"... 🎛️🔥`);
 }
 
-// 🎤 Search for an Artist by Name with Multiple Results
 // 🎤 Search for an Artist by Name with Song Previews
 async function searchArtist() {
     const query = document.getElementById("searchBar").value.trim();
@@ -127,9 +126,9 @@ async function searchArtist() {
         // 🎸 Store artist details
         artists = [{
             name: artist.name,
-            song: topTrack ? topTrack.song : "No Songs Available",
+            song: topTrack.song, // ✅ Ensure the song name is displayed
             image: artist.images.length > 0 ? artist.images[0].url : 'https://via.placeholder.com/250',
-            preview: topTrack ? topTrack.preview : null
+            preview: topTrack.preview
         }];
 
         currentIndex = 0;
@@ -141,28 +140,32 @@ async function searchArtist() {
 
 
 
+
 // 🎧 Get an Artist's Top Tracks with Previews
 async function getTopTracks(artistId) {
-    
     try {
-        // 🔥 Fetch the artist's top 10 tracks
+        // 🔥 Fetch the artist's top 10 tracks from Spotify
         const response = await fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${spotifyToken}` }
         });
 
         const data = await response.json();
-        if (!data.tracks || data.tracks.length === 0) return null; // No tracks found
+        if (!data.tracks || data.tracks.length === 0) {
+            console.warn(`⚠️ No top tracks found for artist ID: ${artistId}`);
+            return { song: "No Songs Found", preview: null };
+        }
 
-        // 🎵 Find the first song that has a preview URL
-        const track = data.tracks.find(track => track.preview_url !== null);
+        // 🎵 Pick the first available song (even if there's no preview)
+        const track = data.tracks[0]; // Get first track (fallback)
+        const trackWithPreview = data.tracks.find(track => track.preview_url !== null);
 
-        return track
-            ? { song: track.name, preview: track.preview_url }
-            : null; // Return null if no preview found
+        return trackWithPreview
+            ? { song: trackWithPreview.name, preview: trackWithPreview.preview_url }
+            : { song: track.name, preview: null }; // Return first track even if no preview
     } catch (error) {
         console.error("❌ Error fetching top tracks:", error);
-        return null;
+        return { song: "No Songs Available", preview: null };
     }
 }
 
