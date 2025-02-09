@@ -26,4 +26,7 @@ Purpose of the project:
 Problems we ran into and potential solutions:
 	One of our biggest learning curves was trying to integrate multiple structures of heirarchy into the same model. For example, the organization of the overall website differs entirely from the collaborate page, and this differs entirely from the visualize page. This taught us to map out our website in a heirarchial format to ensure the creation of a user-friendly interface. 
  	This project also challenged us to leave our comfort zone by using programs like Blender which we hadn't used before. Learning the implementation of these programs in a time crunch proved to be a challenge, however, gave us valuable experience and a framework for a better understanding of the software. 
-  	
+  	Another problem we faced was embedding the AI generated model into a web-page as we weren't able to convert it into a typical website format. However, we were able to create the AI model itself and use it to generate music, which gave us a substantial amount of headway. 
+
+
+Public Frameworks Utilized
