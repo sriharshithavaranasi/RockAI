@@ -16,6 +16,12 @@ Purpose of the project:
  	The following tools were used to develop this project:
   		1. https://wix.com
     		2. https://chatgpt.com
+                4. https://docs.musicfy.lol/
+		5. https://github.com
+                6. Visual Studio(VS code)
+		7. https://developers.zamzar.com/
+                8. https://www.blender.org/
+  
 
 
 
@@ -29,4 +35,9 @@ Problems we ran into and potential solutions:
   	Another problem we faced was embedding the AI generated model into a web-page as we weren't able to convert it into a typical website format. However, we were able to create the AI model itself and use it to generate music, which gave us a substantial amount of headway. 
 
 
-Public Frameworks Utilized
+Public Frameworks Utilized: AWS EC2 instance, S3 bucket, and sageMaker.
+API's utilized: 
+       The following API's were generated and used for our website to access content in other resources
+               1. musify.lol API token - This API token was used to 
+	       2. Spotify API- We used the spotify API to generate the carasole. 
+	       3. Flock API
