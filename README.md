@@ -21,7 +21,10 @@ Purpose of the project:
                 6. Visual Studio(VS code)
 		7. https://developers.zamzar.com/
                 8. https://www.blender.org/
-  
+  		9. [https://www.fender.com/online-guitar-tuner/bass-guitar-tuning](https://tuner-online.com)
+    		10. [https://www.fender.com/online-guitar-tuner/acoustic-guitar-tuning](https://tuner-online.com/other-instruments/bass-tuning)
+      		11. https://tuner-online.com/other-instruments/ukulele-tuning
+		12. https://aisonggenerator.io/
 
 
 
